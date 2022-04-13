@@ -115,12 +115,8 @@ const Header = (props) => {
 
   // for drawer
   const [state, setState] = useState(false);
-  // set active tabs
-  const [value, setValue] = useState(0);
   // for opening menu
   const [anchorEl, setAnchorEl] = useState(null);
-  // set selected menu index
-  const [menuIndex, setMenuIndex] = useState();
 
   const routes = [
     {
@@ -185,7 +181,7 @@ const Header = (props) => {
   };
 
   const changeTabsHandler = (e, value) => {
-    setValue(value);
+    props.setValue(value);
   };
 
   const toggleDrawer = () => setState(!state);
@@ -195,11 +191,11 @@ const Header = (props) => {
     [...routes, ...menus].map((item) => {
       switch (window.location.pathname) {
         case item.link:
-          if (value !== item.active) {
-            setValue(item.active);
+          if (props.value !== item.active) {
+            props.setValue(item.active);
           }
-          if (item.selecte && menuIndex !== item.selecte) {
-            setMenuIndex(item.selecte);
+          if (item.selecte && props.menuIndex !== item.selecte) {
+            props.setMenuIndex(item.selecte);
           }
           break;
 
@@ -208,14 +204,14 @@ const Header = (props) => {
       }
     });
     if (window.location.pathname === "/estimate") {
-      setValue(false);
+      props.setValue(false);
     }
-  }, [value]);
+  }, [props.value]);
 
   const tabs = (
     <React.Fragment>
       <Tabs
-        value={value}
+        value={props.value}
         onChange={changeTabsHandler}
         className={classes.tabs}
         indicatorColor="primary"
@@ -239,7 +235,7 @@ const Header = (props) => {
         component={Link}
         to="/estimate"
         className={classes.button}
-        onClick={() => setValue(false)}
+        onClick={() => props.setValue(false)}
       >
         Free Estimate
       </Button>
@@ -260,11 +256,11 @@ const Header = (props) => {
             to={item.link}
             onClick={() => {
               handleClose();
-              setValue(1);
-              setMenuIndex(index);
+              props.setValue(1);
+              props.setMenuIndex(index);
             }}
             classes={{ root: classes.menuItem }}
-            selected={menuIndex === index && value === 1}
+            selected={props.menuIndex === index && props.value === 1}
           >
             {item.name}
           </MenuItem>
@@ -288,10 +284,10 @@ const Header = (props) => {
             component={Link}
             to={item.link}
             divider
-            selected={value === item.active}
-            onClick={() => setValue(item.active)}
+            selected={props.value === item.active}
+            onClick={() => props.setValue(item.active)}
             className={[
-              value === item.active
+              props.value === item.active
                 ? [classes.listRoot, classes.listRootSelected]
                 : classes.listRoot,
             ]}
@@ -304,8 +300,8 @@ const Header = (props) => {
           component={Link}
           to="/estimate"
           divider
-          selected={value === false}
-          onClick={() => setValue(false)}
+          selected={props.value === false}
+          onClick={() => props.setValue(false)}
           className={[
             classes.listRoot,
             classes.listRootSelected,
@@ -333,6 +329,7 @@ const Header = (props) => {
         onClose={toggleDrawer}
         onOpen={toggleDrawer}
         classes={{ paper: classes.drawerRoot }}
+        style={{zIndex:1100}}
       >
         {list}
       </SwipeableDrawer>
@@ -349,7 +346,7 @@ const Header = (props) => {
               component={Link}
               to="/"
               className={classes.logoBtn}
-              onClick={() => setValue(0)}
+              onClick={() => props.setValue(0)}
             >
               <img src={logo} alt="Logo" className={classes.logo} />
             </Button>
