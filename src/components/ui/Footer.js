@@ -1,9 +1,10 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
+import { services, revolution, about } from "../../data/data";
 import { makeStyles, Grid, Hidden, useMediaQuery } from "@material-ui/core";
-import footerLogo from "../../assets/Footer Adornment.svg";
 import { Facebook, Twitter, Instagram } from "@material-ui/icons";
 import { useTheme } from "@material-ui/core";
+import footerLogo from "../../assets/Footer Adornment.svg";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -44,106 +45,59 @@ const Footer = (props) => {
 
   const servicesItems = (
     <Fragment>
-      <Grid
-        item
-        component={Link}
-        to="/custom-software"
-        onClick={() => {
-          props.setValue(1);
-          props.setMenuIndex(1);
-        }}
-        className={classes.footerLink}
-      >
-        Custom Software Development
-      </Grid>
-      <Grid
-        item
-        component={Link}
-        to="/mobile-apps"
-        onClick={() => {
-          props.setValue(1);
-          props.setMenuIndex(2);
-        }}
-        className={classes.footerLink}
-      >
-        iOS/Android App Development
-      </Grid>
-      <Grid
-        item
-        component={Link}
-        to="/websites"
-        onClick={() => {
-          props.setValue(1);
-          props.setMenuIndex(3);
-        }}
-        className={classes.footerLink}
-      >
-        Website Development
-      </Grid>
+      {services.map((item, index) =>
+        // create services lists and don't use 'services'
+        index !== 0 ? (
+          <Grid
+            item
+            component={Link}
+            to={item.link}
+            onClick={() => {
+              props.setValue(item.selecte);
+              props.setMenuIndex(item.selecte);
+            }}
+            className={classes.footerLink}
+          >
+            {item.name}
+          </Grid>
+        ) : null
+      )}
     </Fragment>
   );
 
   const revolutionItems = (
     <Fragment>
-      <Grid
-        item
-        component={Link}
-        to="/revolution"
-        onClick={() => props.setValue(2)}
-        className={classes.footerLink}
-      >
-        Vision
-      </Grid>
-      <Grid
-        item
-        component={Link}
-        to="/revolution"
-        onClick={() => props.setValue(2)}
-        className={classes.footerLink}
-      >
-        Technology
-      </Grid>
-      <Grid
-        item
-        component={Link}
-        to="/revolution"
-        onClick={() => props.setValue(2)}
-        className={classes.footerLink}
-      >
-        Process
-      </Grid>
+      {revolution.map((item, index) =>
+        index !== 0 ? (
+          <Grid
+            item
+            component={Link}
+            to={item.link}
+            onClick={() => props.setValue(item.active)}
+            className={classes.footerLink}
+          >
+            {item.name}
+          </Grid>
+        ) : null
+      )}
     </Fragment>
   );
 
   const aboutItems = (
     <Fragment>
-      <Grid
-        item
-        component={Link}
-        to="/about"
-        onClick={() => props.setValue(3)}
-        className={classes.footerLink}
-      >
-        Mission Statement
-      </Grid>
-      <Grid
-        item
-        component={Link}
-        to="/about"
-        onClick={() => props.setValue(3)}
-        className={classes.footerLink}
-      >
-        History
-      </Grid>
-      <Grid
-        item
-        component={Link}
-        to="/about"
-        onClick={() => props.setValue(3)}
-        className={classes.footerLink}
-      >
-        Team
-      </Grid>
+      {about.map((item, index) =>
+        index !== 0 ? (
+          <Grid
+            item
+            component={Link}
+            to={item.link}
+            onClick={() => props.setValue(item.active)}
+            className={classes.footerLink}
+          >
+            {item.name}
+          </Grid>
+        ) : null
+      )}
     </Fragment>
   );
 

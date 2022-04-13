@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { routes, services } from "../../data/data"; 
 import {
   AppBar,
   Toolbar,
@@ -13,7 +15,6 @@ import {
 import { makeStyles, useTheme } from "@material-ui/styles";
 import { useScrollTrigger, Tab, Tabs, Button } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 // for appbar
 function ElevationScroll(props) {
@@ -118,60 +119,6 @@ const Header = (props) => {
   // for opening menu
   const [anchorEl, setAnchorEl] = useState(null);
 
-  const routes = [
-    {
-      name: "Home",
-      link: "/",
-      active: 0,
-    },
-    {
-      name: "Services",
-      link: "/services",
-      active: 1,
-    },
-    {
-      name: "The Revolution",
-      link: "/revolution",
-      active: 2,
-    },
-    {
-      name: "About Us",
-      link: "/about",
-      active: 3,
-    },
-    {
-      name: "Contact Us",
-      link: "/contact",
-      active: 4,
-    },
-  ];
-  const menus = [
-    {
-      name: "Services",
-      link: "/services",
-      active: 1,
-      selecte: 0,
-    },
-    {
-      name: "Custom Software Development",
-      link: "/custom-software",
-      active: 1,
-      selecte: 1,
-    },
-    {
-      name: " Mobile Apps Development",
-      link: "/mobile-apps",
-      active: 1,
-      selecte: 2,
-    },
-    {
-      name: "Websites Development",
-      link: "/websites",
-      active: 1,
-      selecte: 3,
-    },
-  ];
-
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -188,7 +135,7 @@ const Header = (props) => {
 
   // set active navigation after reload
   useEffect(() => {
-    [...routes, ...menus].map((item) => {
+    [...routes, ...services].map((item) => {
       switch (window.location.pathname) {
         case item.link:
           if (props.value !== item.active) {
@@ -249,7 +196,7 @@ const Header = (props) => {
         classes={{ paper: classes.menu }}
         elevation={0}
       >
-        {menus.map((item, index) => (
+        {services.map((item, index) => (
           <MenuItem
             key={index}
             component={Link}

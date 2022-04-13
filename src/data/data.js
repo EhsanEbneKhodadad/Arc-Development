@@ -55,35 +55,43 @@ export const revolution = [
   {
     name: "Revolution",
     link: "/revolution",
+    active: 2,
   },
   {
     name: "Vision",
     link: "/revolution",
+    active: 2,
   },
   {
     name: "Technology",
     link: "/revolution",
+    active: 2,
   },
   {
     name: "Process",
     link: "/revolution",
+    active: 2,
   },
 ];
 export const about = [
   {
     name: "About Us",
     link: "/about",
+    active: 3,
   },
   {
     name: "Mission Statement",
     link: "/about",
+    active: 3,
   },
   {
     name: "History",
     link: "/about",
+    active: 3,
   },
   {
     name: "Team",
     link: "/about",
+    active: 3,
   },
 ];
