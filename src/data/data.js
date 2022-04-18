@@ -39,7 +39,7 @@ export const services = [
     selecte: 1,
   },
   {
-    name: " Mobile Apps Development",
+    name: "iOS/Android Development",
     link: "/mobile-apps",
     active: 1,
     selecte: 2,

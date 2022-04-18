@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import theme from "./components/ui/Theme";
 import Header from "./components/ui/Header";
 import Footer from "./components/ui/Footer";
+import Home from "./components/Home/Home";
 
 function App() {
   // set active tabs
@@ -20,10 +21,7 @@ function App() {
           setMenuIndex={setMenuIndex}
         />
         <Routes>
-          <Route
-            path="/"
-            element={<div style={{ height: "100rem" }}>Home</div>}
-          />
+          <Route path="/" element={<Home setValue={setValue} setMenuIndex={setMenuIndex}/>} />
           <Route path="/services" element={<div>Services</div>} />
           <Route path="/custom-software" element={<div>Custom Software</div>} />
           <Route path="/mobile-apps" element={<div>Mobile Apps</div>} />
@@ -34,9 +32,7 @@ function App() {
           <Route path="/estimate" element={<div>Estimate</div>} />
         </Routes>
         <Footer
-          value={value}
           setValue={setValue}
-          menuIndex={menuIndex}
           setMenuIndex={setMenuIndex}
         />
       </BrowserRouter>

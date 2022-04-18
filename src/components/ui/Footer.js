@@ -9,6 +9,9 @@ import footerLogo from "../../assets/Footer Adornment.svg";
 const useStyles = makeStyles((theme) => ({
   footer: {
     backgroundColor: theme.palette.primary.main,
+    [theme.breakpoints.down("xs")]: {
+      padding: "10px",
+    },
   },
   footerLogo: {
     width: "16rem",
@@ -42,6 +45,7 @@ const Footer = (props) => {
   const classes = useStyles();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("md"));
+  const xxs = useMediaQuery("(min-width:450px)");
 
   const servicesItems = (
     <Fragment>
@@ -50,6 +54,7 @@ const Footer = (props) => {
         index !== 0 ? (
           <Grid
             item
+            key={index}
             component={Link}
             to={item.link}
             onClick={() => {
@@ -71,6 +76,7 @@ const Footer = (props) => {
         index !== 0 ? (
           <Grid
             item
+            key={index}
             component={Link}
             to={item.link}
             onClick={() => props.setValue(item.active)}
@@ -89,6 +95,7 @@ const Footer = (props) => {
         index !== 0 ? (
           <Grid
             item
+            key={index}
             component={Link}
             to={item.link}
             onClick={() => props.setValue(item.active)}
@@ -193,17 +200,19 @@ const Footer = (props) => {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item>
-              <a href="https://www.facebook.com" className={classes.margin}>
-                <Facebook className={classes.icons} />
-              </a>
-              <a href="https://twitter.com" className={classes.margin}>
-                <Twitter className={classes.icons} />
-              </a>
-              <a href="https://www.instagram.com" className={classes.margin}>
-                <Instagram className={classes.icons} />
-              </a>
-            </Grid>
+            {xxs ? (
+              <Grid item>
+                <a href="https://www.facebook.com" className={classes.margin}>
+                  <Facebook className={classes.icons} />
+                </a>
+                <a href="https://twitter.com" className={classes.margin}>
+                  <Twitter className={classes.icons} />
+                </a>
+                <a href="https://www.instagram.com" className={classes.margin}>
+                  <Instagram className={classes.icons} />
+                </a>
+              </Grid>
+            ) : null}
           </Grid>
         </Grid>
       </Grid>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { routes, services } from "../../data/data"; 
+import { routes, services } from "../../data/data";
 import {
   AppBar,
   Toolbar,
@@ -276,7 +276,6 @@ const Header = (props) => {
         onClose={toggleDrawer}
         onOpen={toggleDrawer}
         classes={{ paper: classes.drawerRoot }}
-        style={{zIndex:1100}}
       >
         {list}
       </SwipeableDrawer>
