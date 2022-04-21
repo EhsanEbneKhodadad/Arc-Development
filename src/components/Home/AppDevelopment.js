@@ -6,8 +6,8 @@ import mobile from "../../assets/mobile.svg";
 const useStyles = makeStyles((theme) => ({
   right: {
     marginLeft: "auto",
-    [theme.breakpoints.down("xs")]: {
-      marginLeft: "0",
+    [theme.breakpoints.down("sm")]: {
+      padding: "2rem",
     },
   },
   img: {
@@ -18,12 +18,6 @@ const useStyles = makeStyles((theme) => ({
       height: "150px",
     },
   },
-  padding: {
-    marginRight: "5rem",
-    [theme.breakpoints.down("xs")]: {
-      margin: "1rem",
-    },
-  },
 }));
 
 const AppDevelopment = (props) => {
@@ -31,9 +25,9 @@ const AppDevelopment = (props) => {
   const theme = useTheme();
   return (
     <Fragment>
-      <Grid item xs={12} className={classes.padding}>
+      <Grid item className={classes.right}>
         <Grid container alignItems="center">
-          <Grid item xs={7} sm={3} className={classes.right}>
+          <Grid item md={8} xs={9}>
             <Typography variant="h6" color="primary" gutterBottom>
               iOS/Android App Development
             </Typography>
@@ -53,7 +47,7 @@ const AppDevelopment = (props) => {
               }}
             />
           </Grid>
-          <Grid item xs={4} sm={1}>
+          <Grid item md={2} xs={3}>
             <img alt="Mobile" src={mobile} className={classes.img} />
           </Grid>
         </Grid>

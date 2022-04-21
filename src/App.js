@@ -5,6 +5,8 @@ import theme from "./components/ui/Theme";
 import Header from "./components/ui/Header";
 import Footer from "./components/ui/Footer";
 import Home from "./components/Home/Home";
+import Services from "./components/Services/Services";
+import SoftwareDevelopment from "./components/SoftwareDevelopment/SoftwareDevelopment";
 
 function App() {
   // set active tabs
@@ -21,9 +23,22 @@ function App() {
           setMenuIndex={setMenuIndex}
         />
         <Routes>
-          <Route path="/" element={<Home setValue={setValue} setMenuIndex={setMenuIndex}/>} />
-          <Route path="/services" element={<div>Services</div>} />
-          <Route path="/custom-software" element={<div>Custom Software</div>} />
+          <Route
+            path="/"
+            element={<Home setValue={setValue} setMenuIndex={setMenuIndex} />}
+          />
+          <Route
+            path="/services"
+            element={
+              <Services setValue={setValue} setMenuIndex={setMenuIndex} />
+            }
+          />
+          <Route
+            path="/custom-software"
+            element={
+              <SoftwareDevelopment setValue={setValue} setMenuIndex={setMenuIndex} />
+            }
+          />
           <Route path="/mobile-apps" element={<div>Mobile Apps</div>} />
           <Route path="/websites" element={<div>Websites</div>} />
           <Route path="/revolution" element={<div>Revolution</div>} />
@@ -31,10 +46,7 @@ function App() {
           <Route path="/contact" element={<div>Contact</div>} />
           <Route path="/estimate" element={<div>Estimate</div>} />
         </Routes>
-        <Footer
-          setValue={setValue}
-          setMenuIndex={setMenuIndex}
-        />
+        <Footer setValue={setValue} setMenuIndex={setMenuIndex} />
       </BrowserRouter>
     </ThemeProvider>
   );

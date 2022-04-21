@@ -12,13 +12,28 @@ const Home = (props) => {
   return (
     <div>
       <Grid container direction="column">
-        <Technology setValue={props.setValue} setMenuIndex={props.setMenuIndex}/>
-        <SoftwareDevelopment setValue={props.setValue} setMenuIndex={props.setMenuIndex}/>
-        <AppDevelopment setValue={props.setValue} setMenuIndex={props.setMenuIndex}/>
-        <WebsiteDevelopment setValue={props.setValue} setMenuIndex={props.setMenuIndex}/>
-        <Revolution setValue={props.setValue} setMenuIndex={props.setMenuIndex}/>
-        <Info setValue={props.setValue} setMenuIndex={props.setMenuIndex}/>
-        <Estimate setValue={props.setValue} setMenuIndex={props.setMenuIndex}/>
+        <Technology
+          setValue={props.setValue}
+          setMenuIndex={props.setMenuIndex}
+        />
+        <SoftwareDevelopment
+          setValue={props.setValue}
+          setMenuIndex={props.setMenuIndex}
+        />
+        <AppDevelopment
+          setValue={props.setValue}
+          setMenuIndex={props.setMenuIndex}
+        />
+        <WebsiteDevelopment
+          setValue={props.setValue}
+          setMenuIndex={props.setMenuIndex}
+        />
+        <Revolution
+          setValue={props.setValue}
+          setMenuIndex={props.setMenuIndex}
+        />
+        <Info setValue={props.setValue} setMenuIndex={props.setMenuIndex} />
+        <Estimate setValue={props.setValue} setMenuIndex={props.setMenuIndex} />
       </Grid>
     </div>
   );

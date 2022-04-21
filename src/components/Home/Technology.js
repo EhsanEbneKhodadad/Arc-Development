@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   right: {
-    margin: "1rem 0 0 auto",
+    margin: "0 0 0 auto",
     width: "400px",
     height: "300px",
     [theme.breakpoints.down("sm")]: {
@@ -27,8 +27,9 @@ const useStyles = makeStyles((theme) => ({
     margin: "15px",
   },
   center: {
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       justifyContent: "center",
+      padding: "2rem",
     },
   },
 }));
@@ -57,7 +58,7 @@ const Technology = (props) => {
           alignItems="center"
           className={classes.center}
         >
-          <Grid item md={4} sm={6}>
+          <Grid item md={4} sm={8}>
             <Grid container justifyContent="center" spacing={3}>
               <Grid item>
                 <Typography variant="h6" color="primary">
@@ -70,16 +71,20 @@ const Technology = (props) => {
                   color="secondary"
                   className={classes.estimate}
                   component={Link}
-                  to='/estimate'
+                  to="/estimate"
                   onClick={() => props.setValue(false)}
                 >
                   Free Estimate
                 </Button>
-                <LearnBtn color={theme.palette.primary.main}  to='/revolution'  onClick={() => props.setValue(2)}/>
+                <LearnBtn
+                  color={theme.palette.primary.main}
+                  to="/revolution"
+                  onClick={() => props.setValue(2)}
+                />
               </Grid>
             </Grid>
           </Grid>
-          <Grid item sm={6}>
+          <Grid item md={6} sm={4}>
             <div ref={container} className={classes.right} />
           </Grid>
         </Grid>

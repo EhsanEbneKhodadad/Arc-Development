@@ -2,12 +2,11 @@ import React, { Fragment } from "react";
 import { Grid, makeStyles, Typography, useTheme } from "@material-ui/core";
 import LearnBtn from "../ui/LearnBtn";
 import software from "../../assets/software.svg";
-import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   margin: {
-    margin: "0 5rem",
-    [theme.breakpoints.down("xs")]: {
-      margin: "1rem",
+    padding: "0 5rem",
+    [theme.breakpoints.down("sm")]: {
+      padding: "2rem",
     },
   },
   span: {
@@ -30,7 +29,7 @@ const SoftwareDevelopment = (props) => {
     <Fragment>
       <Grid item className={classes.margin}>
         <Grid container>
-          <Grid item xs={8} sm={3}>
+          <Grid item md={4} xs={9}>
             <Typography variant="h6" color="primary">
               Custom Software Development
             </Typography>
@@ -50,8 +49,8 @@ const SoftwareDevelopment = (props) => {
               }}
             />
           </Grid>
-          <Grid item xs={4} sm={5}>
-            <img alt="Software Image" src={software} className={classes.img} />
+          <Grid item md={2} xs={3}>
+            <img alt="Software" src={software} className={classes.img} />
           </Grid>
         </Grid>
       </Grid>
