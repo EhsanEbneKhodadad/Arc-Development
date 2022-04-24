@@ -8,6 +8,7 @@ import Home from "./container/Home";
 import Services from "./container/Services";
 import SoftwareDevelopment from "./container/SoftwareDevelopment";
 import AppDevelopment from "./container/AppDevelopment";
+import Websites from "./container/Websites";
 
 function App() {
   // set active tabs
@@ -49,7 +50,12 @@ function App() {
               <AppDevelopment setValue={setValue} setMenuIndex={setMenuIndex} />
             }
           />
-          <Route path="/websites" element={<div>Websites</div>} />
+          <Route
+            path="/websites"
+            element={
+              <Websites setValue={setValue} setMenuIndex={setMenuIndex} />
+            }
+          />
           <Route path="/revolution" element={<div>Revolution</div>} />
           <Route path="/about" element={<div>About</div>} />
           <Route path="/contact" element={<div>Contact</div>} />

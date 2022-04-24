@@ -7,9 +7,8 @@ import {
   useMediaQuery,
   useTheme,
 } from "@material-ui/core";
-import { IconButton } from "@material-ui/core";
-import { ArrowBack, ArrowForward } from "@material-ui/icons";
 import Lottie from "lottie-web";
+import PageInfo from "../components/ui/PageInfo";
 import Estimate from "../components/Home/Estimate";
 import integrationAnimation from "../animations/integrationAnimation/data.json";
 import extendAccess from "../assets/extendAccess.svg";
@@ -20,16 +19,6 @@ const useStyles = makeStyles((theme) => ({
   marginTop: {
     marginTop: "3rem",
     padding: "1rem",
-  },
-  firstIcon: {
-    textAlign: "right",
-  },
-  iconPadding: {
-    padding: "5px",
-  },
-  secondIcon: {
-    marginLeft: "auto",
-    padding: "5px",
   },
   padding: {
     padding: "7rem",
@@ -47,10 +36,6 @@ const useStyles = makeStyles((theme) => ({
       margin: "auto",
     },
   },
-  extendAccess: {
-    width: "100%",
-    height: "100%",
-  },
   img: {
     [theme.breakpoints.down("sm")]: {
       width: "150px",
@@ -61,6 +46,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       margin: "5rem 0",
     },
+  },
+  extendAccess: {
+    width: "100%",
+    height: "100%",
   },
 }));
 
@@ -83,65 +72,37 @@ const AppDevelopment = (props) => {
     <Grid container direction="column">
       <Grid item container direction="column" className={classes.marginTop}>
         {/******************************************** first section ********************************************/}
-        <Grid item container>
-          <Grid item xs={1} className={classes.firstIcon}>
-            <IconButton
-              component={Link}
-              to="/custom-software"
-              className={classes.iconPadding}
-              onClick={() => {
-                props.setValue(1);
-                props.setMenuIndex(1);
-              }}
+        <PageInfo>
+          <Grid item>
+            <Typography variant="h6" color="primary" gutterBottom>
+              iOS/Android App Development
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography variant="subtitle2" color="textSecondary" paragraph>
+              Mobile apps allow you to take your tools on the go.
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography
+              variant="subtitle2"
+              color="textSecondary"
+              align="justify"
+              paragraph
             >
-              <ArrowBack color="primary" fontSize="small" />
-            </IconButton>
+              Whether you want an app for your customers, employees, or
+              yourself, we can build cross-platform native solutions for any
+              part of your business process. This opens you up to a whole new
+              world of possibilities by taking advantage of phone features like
+              the camera, GPS, push notifications, and more.
+            </Typography>
           </Grid>
-          <Grid item container direction="column" md={5} xs={10}>
-            <Grid item>
-              <Typography variant="h6" color="primary" gutterBottom>
-                iOS/Android App Development
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography variant="subtitle2" color="textSecondary" paragraph>
-                Mobile apps allow you to take your tools on the go.
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography
-                variant="subtitle2"
-                color="textSecondary"
-                paragraph
-                align="justify"
-              >
-                Whether you want an app for your customers, employees, or
-                yourself, we can build cross-platform native solutions for any
-                part of your business process. This opens you up to a whole new
-                world of possibilities by taking advantage of phone features
-                like the camera, GPS, push notifications, and more.
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography variant="subtitle2" color="textSecondary">
-                Convenience. Connection.
-              </Typography>
-            </Grid>
+          <Grid item>
+            <Typography variant="subtitle2" color="textSecondary" paragraph>
+              Convenience. Connection.
+            </Typography>
           </Grid>
-          <Grid item xs={1} className={classes.secondIcon}>
-            <IconButton
-              component={Link}
-              to="/websites"
-              className={classes.iconPadding}
-              onClick={() => {
-                props.setValue(1);
-                props.setMenuIndex(3);
-              }}
-            >
-              <ArrowForward color="primary" fontSize="small" />
-            </IconButton>
-          </Grid>
-        </Grid>
+        </PageInfo>
         {/******************************************** second section ********************************************/}
         <Grid item container alignItems="center" justifyContent="center">
           <Grid

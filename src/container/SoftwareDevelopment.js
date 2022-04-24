@@ -1,15 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import {
   Grid,
-  IconButton,
   makeStyles,
   Typography,
   useMediaQuery,
   useTheme,
 } from "@material-ui/core";
-import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
-import { Link } from "react-router-dom";
 import Estimate from "../components/Home/Estimate";
 import Lottie from "lottie-web";
 import bulb from "../assets/bulb.svg";
@@ -20,37 +16,21 @@ import documentsAnimation from "../animations/documentsAnimation/data";
 import scaleAnimation from "../animations/scaleAnimation/data.json";
 import automationAnimation from "../animations/automationAnimation/data.json";
 import uxAnimation from "../animations/uxAnimation/data";
+import PageInfo from "../components/ui/PageInfo";
 
 const useStyles = makeStyles((theme) => ({
   marginTop: {
     marginTop: "3rem",
     padding: "1rem",
   },
-  margin: {
-    margin: "1rem 0",
-  },
-  firstIcon: {
-    textAlign: "right",
-  },
-  secondIcon: {
-    marginLeft: "auto",
-    padding: "5px",
+  secondContainer: {
+    margin: "5rem 0",
   },
   img: {
     [theme.breakpoints.down("sm")]: {
       width: "50px",
       height: "50px",
     },
-  },
-  iconBtn: {
-    padding: "5px",
-  },
-  secondContainer: {
-    margin: "5rem 0",
-  },
-  animation: {
-    width: "150px",
-    height: "150px",
   },
   padding: {
     padding: "7rem",
@@ -60,6 +40,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("xs")]: {
       padding: "1rem 2rem",
     },
+  },
+  animation: {
+    width: "150px",
+    height: "150px",
   },
   rootImg: {
     width: "550px",
@@ -116,84 +100,56 @@ const SoftwareDevelopment = (props) => {
     <Grid>
       <Grid item container direction="column" className={classes.marginTop}>
         {/******************************************** first section ********************************************/}
-        <Grid item container>
-          <Grid item xs={1} className={classes.firstIcon}>
-            <IconButton
-              component={Link}
-              to="/services"
-              className={classes.iconBtn}
-              onClick={() => {
-                props.setValue(1);
-                props.setMenuIndex(0);
-              }}
+        <PageInfo>
+          <Grid item>
+            <Typography variant="h6" color="primary" gutterBottom>
+              Custom Software Development
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography
+              variant="subtitle2"
+              color="textSecondary"
+              align="justify"
+              paragraph
             >
-              <ArrowBackIcon fontSize="small" color="primary" />
-            </IconButton>
-          </Grid>
-          <Grid container item md={5} xs={10} direction="column">
-            <Grid item>
-              <Typography variant="h6" color="primary" gutterBottom>
-                Custom Software Development
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography
-                variant="subtitle2"
-                color="textSecondary"
-                align="justify"
-                className={classes.margin}
-              >
-                Whether we’re replacing old software or inventing new solutions,
-                Arc Development is here to help your business tackle technology.
-              </Typography>
-              <Typography
-                variant="subtitle2"
-                color="textSecondary"
-                align="justify"
-                className={classes.margin}
-              >
-                Using regular commercial software leaves you with a lot of stuff
-                you don’t need, without some of the stuff you do need, and
-                ultimately controls the way you work. Without using any software
-                at all you risk falling behind competitors and missing out on
-                huge savings from increased efficiency.
-              </Typography>
-              <Typography
-                variant="subtitle2"
-                color="textSecondary"
-                align="justify"
-                className={classes.margin}
-              >
-                Our custom solutions are designed from the ground up with your
-                needs, wants, and goals at the core. This collaborative process
-                produces finely tuned software that is much more effective at
-                improving your workflow and reducing costs than generalized
-                options.
-              </Typography>
-              <Typography
-                variant="subtitle2"
-                color="textSecondary"
-                align="justify"
-                className={classes.margin}
-              >
-                We create exactly what you what, exactly how you want it.
-              </Typography>
-            </Grid>
-          </Grid>
-          <Grid item xs={1} className={classes.secondIcon}>
-            <IconButton
-              component={Link}
-              to="/mobile-apps"
-              className={classes.iconBtn}
-              onClick={() => {
-                props.setValue(1);
-                props.setMenuIndex(2);
-              }}
+              Whether we’re replacing old software or inventing new solutions,
+              Arc Development is here to help your business tackle technology.
+            </Typography>
+            <Typography
+              variant="subtitle2"
+              color="textSecondary"
+              align="justify"
+              paragraph
             >
-              <ArrowForwardIcon fontSize="small" color="primary" />
-            </IconButton>
+              Using regular commercial software leaves you with a lot of stuff
+              you don’t need, without some of the stuff you do need, and
+              ultimately controls the way you work. Without using any software
+              at all you risk falling behind competitors and missing out on huge
+              savings from increased efficiency.
+            </Typography>
+            <Typography
+              variant="subtitle2"
+              color="textSecondary"
+              align="justify"
+              paragraph
+            >
+              Our custom solutions are designed from the ground up with your
+              needs, wants, and goals at the core. This collaborative process
+              produces finely tuned software that is much more effective at
+              improving your workflow and reducing costs than generalized
+              options.
+            </Typography>
+            <Typography
+              variant="subtitle2"
+              color="textSecondary"
+              align="justify"
+              paragraph
+            >
+              We create exactly what you what, exactly how you want it.
+            </Typography>
           </Grid>
-        </Grid>
+        </PageInfo>
         {/******************************************** second section ********************************************/}
         <Grid item container className={classes.secondContainer}>
           <Grid
@@ -325,13 +281,7 @@ const SoftwareDevelopment = (props) => {
           <Grid item className={classes.rootImg}>
             <img src={root} alt="root" />
           </Grid>
-          <Grid
-            item
-            container
-            direction="column"
-            alignItems="center"
-            className={classes.margin}
-          >
+          <Grid item container direction="column" alignItems="center">
             <Grid item sm={4} xs={8}>
               <Typography variant="h6" color="primary" paragraph>
                 Root-Cause Analysis
@@ -451,7 +401,7 @@ const SoftwareDevelopment = (props) => {
         </Grid>
       </Grid>
       <Grid item>
-        <Estimate setValue={props.setValue} setMenuIndex={props.setMenuIndex}/>
+        <Estimate setValue={props.setValue} setMenuIndex={props.setMenuIndex} />
       </Grid>
     </Grid>
   );
