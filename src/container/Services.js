@@ -6,10 +6,10 @@ import {
   useTheme,
   useMediaQuery,
 } from "@material-ui/core";
-import LearnBtn from "../ui/LearnBtn";
-import mobile from "../../assets/mobile.svg";
-import software from "../../assets/software.svg";
-import website from "../../assets/website.svg";
+import LearnBtn from "../components/ui/LearnBtn";
+import mobile from "../assets/mobile.svg";
+import software from "../assets/software.svg";
+import website from "../assets/website.svg";
 
 const useStyles = makeStyles((theme) => ({
   img: {

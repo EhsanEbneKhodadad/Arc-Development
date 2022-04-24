@@ -1,12 +1,12 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
-import Technology from "./Technology";
-import SoftwareDevelopment from "./SoftwareDevelopment";
-import AppDevelopment from "./AppDevelopment";
-import WebsiteDevelopment from "./WebsiteDevelopment";
-import Revolution from "./Revolution";
-import Info from "./Info";
-import Estimate from "./Estimate";
+import Technology from "../components/Home/Technology";
+import SoftwareDevelopment from "../components/Home/SoftwareDevelopment";
+import AppDevelopment from "../components/Home/AppDevelopment";
+import WebsiteDevelopment from "../components/Home/WebsiteDevelopment";
+import Revolution from "../components/Home/Revolution";
+import Info from "../components/Home/Info";
+import Estimate from "../components/Home/Estimate";
 
 const Home = (props) => {
   return (

@@ -10,16 +10,16 @@ import {
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import { Link } from "react-router-dom";
-import Estimate from "../Home/Estimate";
+import Estimate from "../components/Home/Estimate";
 import Lottie from "lottie-web";
-import bulb from "../../assets/bulb.svg";
-import stopwatch from "../../assets/stopwatch.svg";
-import cash from "../../assets/cash.svg";
-import root from "../../assets/root.svg";
-import documentsAnimation from "../../animations/documentsAnimation/data";
-import scaleAnimation from "../../animations/scaleAnimation/data.json";
-import automationAnimation from "../../animations/automationAnimation/data.json";
-import uxAnimation from "../../animations/uxAnimation/data";
+import bulb from "../assets/bulb.svg";
+import stopwatch from "../assets/stopwatch.svg";
+import cash from "../assets/cash.svg";
+import root from "../assets/root.svg";
+import documentsAnimation from "../animations/documentsAnimation/data";
+import scaleAnimation from "../animations/scaleAnimation/data.json";
+import automationAnimation from "../animations/automationAnimation/data.json";
+import uxAnimation from "../animations/uxAnimation/data";
 
 const useStyles = makeStyles((theme) => ({
   marginTop: {
@@ -31,7 +31,6 @@ const useStyles = makeStyles((theme) => ({
   },
   firstIcon: {
     textAlign: "right",
-    // padding: "5px",
   },
   secondIcon: {
     marginLeft: "auto",
@@ -452,7 +451,7 @@ const SoftwareDevelopment = (props) => {
         </Grid>
       </Grid>
       <Grid item>
-        <Estimate />
+        <Estimate setValue={props.setValue} setMenuIndex={props.setMenuIndex}/>
       </Grid>
     </Grid>
   );

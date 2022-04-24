@@ -4,9 +4,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import theme from "./components/ui/Theme";
 import Header from "./components/ui/Header";
 import Footer from "./components/ui/Footer";
-import Home from "./components/Home/Home";
-import Services from "./components/Services/Services";
-import SoftwareDevelopment from "./components/SoftwareDevelopment/SoftwareDevelopment";
+import Home from "./container/Home";
+import Services from "./container/Services";
+import SoftwareDevelopment from "./container/SoftwareDevelopment";
+import AppDevelopment from "./container/AppDevelopment";
 
 function App() {
   // set active tabs
@@ -36,10 +37,18 @@ function App() {
           <Route
             path="/custom-software"
             element={
-              <SoftwareDevelopment setValue={setValue} setMenuIndex={setMenuIndex} />
+              <SoftwareDevelopment
+                setValue={setValue}
+                setMenuIndex={setMenuIndex}
+              />
             }
           />
-          <Route path="/mobile-apps" element={<div>Mobile Apps</div>} />
+          <Route
+            path="/mobile-apps"
+            element={
+              <AppDevelopment setValue={setValue} setMenuIndex={setMenuIndex} />
+            }
+          />
           <Route path="/websites" element={<div>Websites</div>} />
           <Route path="/revolution" element={<div>Revolution</div>} />
           <Route path="/about" element={<div>About</div>} />
