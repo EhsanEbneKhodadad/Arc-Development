@@ -12,6 +12,7 @@ import analytics from "../assets/analytics.svg";
 import ecommerce from "../assets/ecommerce.svg";
 import outreach from "../assets/outreach.svg";
 import seo from "../assets/seo.svg";
+import { services } from "../data/data";
 
 const useStyles = makeStyles((theme) => ({
   marginTop: {
@@ -45,7 +46,12 @@ const Websites = (props) => {
       <Grid item container direction="column">
         <Grid item container className={classes.marginTop}>
           {/******************************************** first section ********************************************/}
-          <PageInfo>
+          <PageInfo
+            setValue={props.setValue}
+            setMenuIndex={props.setMenuIndex}
+            before={services[2]}
+            after={services[0]}
+          >
             <Grid item>
               <Typography variant="h6" color="primary" gutterBottom>
                 Website Development
@@ -187,7 +193,8 @@ const Websites = (props) => {
           <Grid item container md={3} sm={4} xs={6}>
             <Grid item className={classes.titleMargin}>
               <Typography variant="h6" color="primary">
-                Search Engine<br /> Optimization
+                Search Engine
+                <br /> Optimization
               </Typography>
             </Grid>
             <Grid item>

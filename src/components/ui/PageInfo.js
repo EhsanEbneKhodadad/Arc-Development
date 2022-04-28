@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, IconButton, makeStyles, Typography } from "@material-ui/core";
+import { Grid, IconButton, makeStyles } from "@material-ui/core";
 import { ArrowBack, ArrowForward } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 
@@ -25,11 +25,11 @@ const PageInfo = (props) => {
       <Grid item xs={1} className={classes.firstIcon}>
         <IconButton
           component={Link}
-          to="/services"
+          to={props.before.link}
           className={classes.iconBtn}
           onClick={() => {
-            props.setValue(1);
-            props.setMenuIndex(0);
+            props.setValue(props.before.active);
+            props.setMenuIndex(props.before.selecte);
           }}
         >
           <ArrowBack fontSize="small" color="primary" />
@@ -41,11 +41,11 @@ const PageInfo = (props) => {
       <Grid item xs={1} className={classes.secondIcon}>
         <IconButton
           component={Link}
-          to="/mobile-apps"
+          to={props.after.link}
           className={classes.iconBtn}
           onClick={() => {
-            props.setValue(1);
-            props.setMenuIndex(2);
+            props.setValue(props.after.active);
+            props.setMenuIndex(props.after.selecte);
           }}
         >
           <ArrowForward fontSize="small" color="primary" />

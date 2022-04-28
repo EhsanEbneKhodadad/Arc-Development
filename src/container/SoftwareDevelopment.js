@@ -17,10 +17,11 @@ import scaleAnimation from "../animations/scaleAnimation/data.json";
 import automationAnimation from "../animations/automationAnimation/data.json";
 import uxAnimation from "../animations/uxAnimation/data";
 import PageInfo from "../components/ui/PageInfo";
+import { services } from "../data/data";
 
 const useStyles = makeStyles((theme) => ({
   marginTop: {
-    marginTop: "3rem",
+    marginTop: "4rem",
     padding: "1rem",
   },
   secondContainer: {
@@ -100,7 +101,12 @@ const SoftwareDevelopment = (props) => {
     <Grid>
       <Grid item container direction="column" className={classes.marginTop}>
         {/******************************************** first section ********************************************/}
-        <PageInfo>
+        <PageInfo
+          setValue={props.setValue}
+          setMenuIndex={props.setMenuIndex}
+          before={services[0]}
+          after={services[2]}
+        >
           <Grid item>
             <Typography variant="h6" color="primary" gutterBottom>
               Custom Software Development

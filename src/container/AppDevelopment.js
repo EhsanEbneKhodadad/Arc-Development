@@ -14,6 +14,7 @@ import integrationAnimation from "../animations/integrationAnimation/data.json";
 import extendAccess from "../assets/extendAccess.svg";
 import increaseEngagement from "../assets/increaseEngagement.svg";
 import swissKnife from "../assets/swissKnife.svg";
+import { services } from "../data/data";
 
 const useStyles = makeStyles((theme) => ({
   marginTop: {
@@ -72,7 +73,12 @@ const AppDevelopment = (props) => {
     <Grid container direction="column">
       <Grid item container direction="column" className={classes.marginTop}>
         {/******************************************** first section ********************************************/}
-        <PageInfo>
+        <PageInfo
+          setValue={props.setValue}
+          setMenuIndex={props.setMenuIndex}
+          before={services[1]}
+          after={services[3]}
+        >
           <Grid item>
             <Typography variant="h6" color="primary" gutterBottom>
               iOS/Android App Development
