@@ -27,5 +27,27 @@ const theme = createTheme({
       textTransform: "none",
     },
   },
+  overrides: {
+    MuiInputLabel: {
+      root: {
+        color: blue,
+      },
+    },
+    MuiInput: {
+      underline: {
+        "&:before": {
+          borderBottom: `2px solid ${blue}`,
+        },
+        "&:hover:not($focused):not($error):before": {
+          borderBottom: `2px solid ${blue}`,
+        },
+      },
+    },
+    MuiDialog:{
+      paper:{
+        width:'50%'
+      }
+    }
+  },
 });
 export default theme;

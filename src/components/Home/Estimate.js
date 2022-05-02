@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       marginLeft: 0,
     },
+    ['&:hover']:{
+      background:theme.palette.secondary.dark
+    }
   },
   marginLeft: {
     marginLeft: "3rem",
@@ -46,7 +49,7 @@ const Estimate = (props) => {
   const theme = useTheme();
   return (
     <Grid container className={classes.background} alignItems="center">
-      <Grid item sm={9} xs={8}>
+      <Grid item md={4} sm={6} xs={8}>
         <Grid container direction="column" className={classes.marginLeft}>
           <Grid item>
             <Typography gutterBottom variant="h6" color="primary">
@@ -73,7 +76,7 @@ const Estimate = (props) => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item sm={3} xs={4}>
+      <Grid item md={8} sm={6} xs={4}>
         <Button
           className={classes.estimate}
           component={Link}

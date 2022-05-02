@@ -11,6 +11,7 @@ import AppDevelopment from "./container/AppDevelopment";
 import Websites from "./container/Websites";
 import Revolution from "./container/Revolution";
 import About from "./container/About";
+import Contact from "./container/Contact";
 
 function App() {
   // set active tabs
@@ -68,7 +69,12 @@ function App() {
             path="/about"
             element={<About setValue={setValue} setMenuIndex={setMenuIndex} />}
           />
-          <Route path="/contact" element={<div>Contact</div>} />
+          <Route
+            path="/contact"
+            element={
+              <Contact setValue={setValue} setMenuIndex={setMenuIndex} />
+            }
+          />
           <Route path="/estimate" element={<div>Estimate</div>} />
         </Routes>
         <Footer setValue={setValue} setMenuIndex={setMenuIndex} />
