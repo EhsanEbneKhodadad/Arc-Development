@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Button,
   CircularProgress,
@@ -12,7 +12,6 @@ import {
   useMediaQuery,
   useTheme,
 } from "@material-ui/core";
-import { useNavigate } from "react-router-dom";
 import send from "../../assets/send.svg";
 
 const useStyles = makeStyles((theme) => ({
@@ -63,9 +62,6 @@ const DialogComponent = (props) => {
   const classes = useStyles();
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("xs"));
-  const [click, setClick] = useState(false);
-
-  const navigate = useNavigate();
 
   return (
     <Dialog
@@ -89,6 +85,9 @@ const DialogComponent = (props) => {
               onChange={props.validation}
               error={props.nameHelper.length > 0 ? true : false}
               helperText={props.nameHelper}
+              inputProps={{
+                autoComplete: "off",
+              }}
             />
           </Grid>
           <Grid item className={classes.width}>
@@ -103,6 +102,9 @@ const DialogComponent = (props) => {
               onChange={props.validation}
               error={props.phoneHelper.length > 0 ? true : false}
               helperText={props.phoneHelper}
+              inputProps={{
+                autoComplete: "off",
+              }}
             />
           </Grid>
           <Grid item className={classes.width}>
@@ -172,15 +174,11 @@ const DialogComponent = (props) => {
                 color="primary"
                 className={classes.btn}
                 onClick={() => {
-                  setClick(true);
-                  setTimeout(() => {
-                    navigate("/");
-                    props.setValue(0);
-                  }, 1500);
+                  props.sendEmail();
                 }}
               >
-                {click ? (
-                  <CircularProgress className={classes.color} />
+                {props.loading ? (
+                  <CircularProgress className={classes.color} size={30}/>
                 ) : (
                   <div>
                     Yes{" "}

@@ -11,7 +11,6 @@ import {
 } from "@material-ui/core";
 import background from "../../assets/repeatingBackground.svg";
 import LearnBtn from "../ui/LearnBtn";
-import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   background: {

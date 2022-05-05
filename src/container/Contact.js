@@ -8,11 +8,13 @@ import {
   useMediaQuery,
   useTheme,
 } from "@material-ui/core";
+import emailjs from "@emailjs/browser";
 import Estimate from "../components/Home/Estimate";
 import phoneIcon from "../assets/phone.svg";
 import emailIcon from "../assets/email.svg";
 import send from "../assets/send.svg";
 import DialogComponent from "../components/Dialog/Dialog";
+import swal from "sweetalert";
 
 const useStyles = makeStyles((theme) => ({
   line: {
@@ -70,6 +72,7 @@ const Contact = (props) => {
   const [phoneHelper, setPhoneHelper] = useState("");
   const [message, setMessage] = useState("");
   const [messageHelper, setMessageHelper] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
@@ -84,6 +87,36 @@ const Contact = (props) => {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const sendEmail = () => {
+    setLoading(true);
+    emailjs
+      .send(
+        "service_ii3uwtc",
+        "template_njw4wnd",
+        {
+          from_name: name,
+          email: email,
+          phone: phone,
+          message: message,
+        },
+        "ZelHyStE66mscPhvF"
+      )
+      .then((res) => {
+        swal("Good job!", "Your message has been sent.", "success");
+        setName("");
+        setEmail("");
+        setPhone("");
+        setMessage("");
+      })
+      .catch((err) => {
+        swal("Error", "", "error");
+      })
+      .finally(() => {
+        setLoading(false);
+        setOpen(false);
+      });
   };
 
   const validation = (event) => {
@@ -179,8 +212,11 @@ const Contact = (props) => {
               color="primary"
               className={classes.sMargin}
             >
-              <a href="mailto:zach@gmail.com" className={classes.a}>
-                zach@gmail.com
+              <a
+                href="mailto:ehsan.ebnekhodadad@gmail.com"
+                className={classes.a}
+              >
+                ehsan.ebnekhodadad@gmail.com
               </a>
             </Typography>
           </Grid>
@@ -202,6 +238,9 @@ const Contact = (props) => {
               onChange={validation}
               error={nameHelper.length > 0 ? true : false}
               helperText={nameHelper}
+              inputProps={{
+                autoComplete: 'off'
+             }}
             />
             <TextField
               required
@@ -213,6 +252,9 @@ const Contact = (props) => {
               onChange={validation}
               error={phoneHelper.length > 0 ? true : false}
               helperText={phoneHelper}
+              inputProps={{
+                autoComplete: 'off'
+             }}
             />
             <TextField
               required
@@ -275,6 +317,9 @@ const Contact = (props) => {
           messageHelper={messageHelper}
           validation={validation}
           setValue={props.setValue}
+          sendEmail={sendEmail}
+          loading={loading}
+          setLoading={setLoading}
         />
       </Grid>
       <Grid item md={8}>
