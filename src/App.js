@@ -12,6 +12,7 @@ import Websites from "./container/Websites";
 import Revolution from "./container/Revolution";
 import About from "./container/About";
 import Contact from "./container/Contact";
+import Estimate from "./container/Estimate";
 
 function App() {
   // set active tabs
@@ -75,7 +76,12 @@ function App() {
               <Contact setValue={setValue} setMenuIndex={setMenuIndex} />
             }
           />
-          <Route path="/estimate" element={<div>Estimate</div>} />
+          <Route
+            path="/estimate"
+            element={
+              <Estimate setValue={setValue} setMenuIndex={setMenuIndex} />
+            }
+          />
         </Routes>
         <Footer setValue={setValue} setMenuIndex={setMenuIndex} />
       </BrowserRouter>

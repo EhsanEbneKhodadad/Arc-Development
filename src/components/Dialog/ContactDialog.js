@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Button,
   CircularProgress,
@@ -15,23 +15,11 @@ import {
 import send from "../../assets/send.svg";
 
 const useStyles = makeStyles((theme) => ({
-  sMargin: {
-    margin: "0 10px",
-  },
   form: {
     width: "70%",
   },
   inputmargin: {
     margin: "1rem 0",
-  },
-  btn: {
-    color: "#fff",
-    width: 100,
-    height: 40,
-    fontSize: "14px",
-    borderRadius: "50px",
-    alignSelf: "center",
-    margin: "2rem 0 2rem 2rem",
   },
   textfieldClass: {
     "& .MuiInput-input": {
@@ -47,14 +35,36 @@ const useStyles = makeStyles((theme) => ({
   width: {
     width: "70%",
   },
-  color: {
-    color: "#fff",
-  },
-  err: {
-    color: theme.palette.error.main,
+  mainColor: {
+    color: theme.palette.primary.main,
+    alignSelf: "center",
   },
   green: {
     color: "green",
+  },
+  err: {
+    color: theme.palette.error.main,
+    "&:hover": {
+      background: "transparent",
+    },
+  },
+  btn: {
+    color: "#fff",
+    width: 150,
+    height: 40,
+    fontSize: "14px",
+    borderRadius: "50px",
+    alignSelf: "center",
+  },
+  color: {
+    color: "#fff",
+  },
+  sMargin: {
+    margin: "0 10px",
+  },
+  width: {
+    width: "70%",
+    margin: "0.4rem",
   },
 }));
 
@@ -71,7 +81,9 @@ const DialogComponent = (props) => {
       fullWidth
       fullScreen={matches ? true : false}
     >
-      <DialogTitle id="form-dialog-title">Confirm Message</DialogTitle>
+      <DialogTitle id="form-dialog-title" className={classes.mainColor}>
+        Confirm Message
+      </DialogTitle>
       <DialogContent>
         <Grid container direction="column" alignItems="center">
           <Grid item className={classes.width}>
@@ -173,12 +185,10 @@ const DialogComponent = (props) => {
                 variant="contained"
                 color="primary"
                 className={classes.btn}
-                onClick={() => {
-                  props.sendEmail();
-                }}
+                onClick={props.sendEmail}
               >
                 {props.loading ? (
-                  <CircularProgress className={classes.color} size={30}/>
+                  <CircularProgress className={classes.color} size={30} />
                 ) : (
                   <div>
                     Yes{" "}

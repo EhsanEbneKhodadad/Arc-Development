@@ -13,7 +13,7 @@ import Estimate from "../components/Home/Estimate";
 import phoneIcon from "../assets/phone.svg";
 import emailIcon from "../assets/email.svg";
 import send from "../assets/send.svg";
-import DialogComponent from "../components/Dialog/Dialog";
+import DialogComponent from "../components/Dialog/ContactDialog";
 import swal from "sweetalert";
 
 const useStyles = makeStyles((theme) => ({
@@ -36,7 +36,6 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "14px",
     borderRadius: "50px",
     alignSelf: "center",
-    marginTop: "2rem",
   },
   contactContainer: {
     height: "90%",
@@ -239,8 +238,8 @@ const Contact = (props) => {
               error={nameHelper.length > 0 ? true : false}
               helperText={nameHelper}
               inputProps={{
-                autoComplete: 'off'
-             }}
+                autoComplete: "off",
+              }}
             />
             <TextField
               required
@@ -253,8 +252,8 @@ const Contact = (props) => {
               error={phoneHelper.length > 0 ? true : false}
               helperText={phoneHelper}
               inputProps={{
-                autoComplete: 'off'
-             }}
+                autoComplete: "off",
+              }}
             />
             <TextField
               required
@@ -302,13 +301,9 @@ const Contact = (props) => {
         </Grid>
         <DialogComponent
           name={name}
-          setName={setName}
           phone={phone}
-          setPhone={setPhone}
           email={email}
-          setEmail={setEmail}
           message={message}
-          setMessage={setMessage}
           open={open}
           handleClose={handleClose}
           nameHelper={nameHelper}
@@ -316,10 +311,8 @@ const Contact = (props) => {
           phoneHelper={phoneHelper}
           messageHelper={messageHelper}
           validation={validation}
-          setValue={props.setValue}
           sendEmail={sendEmail}
           loading={loading}
-          setLoading={setLoading}
         />
       </Grid>
       <Grid item md={8}>

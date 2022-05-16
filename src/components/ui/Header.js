@@ -135,7 +135,7 @@ const Header = (props) => {
 
   // set active navigation after reload
   useEffect(() => {
-    [...routes, ...services].map((item) => {
+    [...routes, ...services].forEach((item) => {
       switch (window.location.pathname) {
         case item.link:
           if (props.value !== item.active) {
@@ -153,7 +153,7 @@ const Header = (props) => {
     if (window.location.pathname === "/estimate") {
       props.setValue(false);
     }
-  }, [props.value]);
+  });
 
   const tabs = (
     <React.Fragment>
