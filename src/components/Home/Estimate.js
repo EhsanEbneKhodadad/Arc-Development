@@ -32,9 +32,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       marginLeft: 0,
     },
-    ['&:hover']:{
-      background:theme.palette.secondary.dark
-    }
+    ["&:hover"]: {
+      background: theme.palette.secondary.dark,
+    },
   },
   marginLeft: {
     marginLeft: "3rem",
@@ -52,17 +52,13 @@ const Estimate = (props) => {
       <Grid item md={4} sm={6} xs={8}>
         <Grid container direction="column" className={classes.marginLeft}>
           <Grid item>
-            <Typography gutterBottom variant="h6" color="primary">
+            <Typography gutterBottom variant="h5" color="primary">
               Simple Software.
               <br /> Revolutionary Results.
             </Typography>
           </Grid>
           <Grid item>
-            <Typography
-              gutterBottom
-              variant="subtitle2"
-              className={classes.color}
-            >
+            <Typography gutterBottom variant="body1" className={classes.color}>
               Take advantage of the
               <br /> 21st Century.
             </Typography>

@@ -30,13 +30,13 @@ const SoftwareDevelopment = (props) => {
       <Grid item className={classes.margin}>
         <Grid container>
           <Grid item md={4} xs={9}>
-            <Typography variant="h6" color="primary">
+            <Typography variant="h5" color="primary" paragraph>
               Custom Software Development
             </Typography>
-            <Typography variant="body2" color="textSecondary" gutterBottom>
+            <Typography variant="body2" color="textSecondary" paragraph>
               Save Energy. Save Time. Save Money.
             </Typography>
-            <Typography variant="body2" color="textSecondary" gutterBottom>
+            <Typography variant="body2" color="textSecondary" paragraph>
               Complete digital solutions, from investigation to{" "}
               <span className={classes.span}>celebration</span>.
             </Typography>

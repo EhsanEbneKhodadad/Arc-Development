@@ -217,6 +217,7 @@ const Estimate = () => {
         setEmail("");
         setPhone("");
         setMessage("");
+        setQuestions(_.cloneDeep(data));
       })
       .catch((err) => {
         swal("Error", "", "error");

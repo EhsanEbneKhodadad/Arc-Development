@@ -52,9 +52,15 @@ const useStyles = makeStyles((theme) => ({
   },
   btnContainer: {
     marginTop: "4rem",
+    [theme.breakpoints.down("xs")]: {
+      margin: "0",
+    },
   },
   margin: {
     margin: "2rem 0 0 4rem",
+    [theme.breakpoints.down("sm")]: {
+      margin: "2rem 0 0 0",
+    },
   },
   price: {
     color: theme.palette.secondary.main,

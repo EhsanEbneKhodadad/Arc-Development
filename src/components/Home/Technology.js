@@ -58,10 +58,10 @@ const Technology = (props) => {
           alignItems="center"
           className={classes.center}
         >
-          <Grid item md={4} sm={8}>
+          <Grid item md={5} sm={8}>
             <Grid container justifyContent="center" spacing={3}>
               <Grid item>
-                <Typography variant="h6" color="primary">
+                <Typography variant="h5" color="primary">
                   Bringing West Coast Technology to the Midwest
                 </Typography>
               </Grid>

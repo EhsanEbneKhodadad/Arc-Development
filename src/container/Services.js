@@ -12,6 +12,17 @@ import software from "../assets/software.svg";
 import website from "../assets/website.svg";
 
 const useStyles = makeStyles((theme) => ({
+  marginTop: {
+    marginTop: "3rem",
+    padding: "1rem 7rem",
+    minHeight: "90vh",
+    [theme.breakpoints.down("md")]: {
+      padding: "2rem 5rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "2rem",
+    },
+  },
   img: {
     width: "150px",
     height: "150px",
@@ -20,15 +31,7 @@ const useStyles = makeStyles((theme) => ({
       height: "150px",
     },
   },
-  title: {
-    paddingLeft: "5rem",
-    marginTop: "1rem",
-    [theme.breakpoints.down("sm")]: {
-      paddingLeft: "0",
-    },
-  },
   item: {
-    padding: "2rem 5rem",
     [theme.breakpoints.down("sm")]: {
       padding: "2rem",
     },
@@ -41,13 +44,9 @@ const Services = (props) => {
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <Grid
-      container
-      direction="column"
-      alignItems={matches ? "center" : "flex-start"}
-    >
-      <Grid item className={classes.title}>
-        <Typography variant="h4" color="primary">
+    <Grid container direction="column" justifyContent='space-around' className={classes.marginTop}>
+      <Grid item>
+        <Typography variant="h3" color="primary">
           Services
         </Typography>
       </Grid>
@@ -58,13 +57,23 @@ const Services = (props) => {
         className={classes.item}
       >
         <Grid item md={4} xs={9}>
-          <Typography variant="h6" color="primary" gutterBottom>
+          <Typography variant="h5" color="primary" gutterBottom>
             iOS/Android App Development
           </Typography>
-          <Typography variant="body2" color="textSecondary" gutterBottom>
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            gutterBottom
+            align="justify"
+          >
             Extend Functionality. Extend Access. Increase Engagement.
           </Typography>
-          <Typography variant="body2" color="textSecondary" gutterBottom>
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            gutterBottom
+            align="justify"
+          >
             Integrate your web experience or create a standalone app with either
             mobile platform.
           </Typography>
@@ -77,7 +86,7 @@ const Services = (props) => {
             }}
           />
         </Grid>
-        <Grid item md={2} xs={3}>
+        <Grid item md={2} xs={3} style={{ paddingLeft: 20 }}>
           <img alt="Mobile" src={mobile} className={classes.img} />
         </Grid>
       </Grid>
@@ -88,13 +97,23 @@ const Services = (props) => {
         className={classes.item}
       >
         <Grid item md={4} xs={9}>
-          <Typography variant="h6" color="primary">
+          <Typography variant="h5" color="primary">
             Custom Software Development
           </Typography>
-          <Typography variant="body2" color="textSecondary" gutterBottom>
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            gutterBottom
+            align="justify"
+          >
             Save Energy. Save Time. Save Money.
           </Typography>
-          <Typography variant="body2" color="textSecondary" gutterBottom>
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            gutterBottom
+            align="justify"
+          >
             Complete digital solutions, from investigation to{" "}
             <span className={classes.span}>celebration</span>.
           </Typography>
@@ -118,13 +137,23 @@ const Services = (props) => {
         className={classes.item}
       >
         <Grid item md={4} xs={9}>
-          <Typography variant="h6" color="primary">
+          <Typography variant="h5" color="primary">
             Website Development
           </Typography>
-          <Typography variant="body2" color="textSecondary" gutterBottom>
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            gutterBottom
+            align="justify"
+          >
             Reach More. Discover More. Sell more.
           </Typography>
-          <Typography variant="body2" color="textSecondary" gutterBottom>
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            gutterBottom
+            align="justify"
+          >
             Optimized for Search Engines, built for speed.
           </Typography>
           <LearnBtn

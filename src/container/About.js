@@ -43,12 +43,12 @@ const About = (props) => {
       {/******************************************** section ********************************************/}
       <Grid item container direction="column" className={classes.marginTop}>
         <Grid item>
-          <Typography variant="h6" color="primary">
+          <Typography variant="h3" color="primary">
             About Us
           </Typography>
         </Grid>
         <Grid item sm={8} className={classes.center}>
-          <Typography variant="body2" color="primary" align="justify">
+          <Typography variant="body1" color="primary" align="justify">
             Whether it be person to person, business to consumer, or an
             individual to their interests, technology is meant to bring us
             closer to what we care about in the best way possible. Arc
@@ -61,18 +61,18 @@ const About = (props) => {
       <Grid item container className={classes.marginTop} alignItems="center">
         <Grid item container direction="column" md={5}>
           <Grid item>
-            <Typography variant="h6" color="primary" gutterBottom>
+            <Typography variant="h4" color="primary" gutterBottom>
               History
             </Typography>
           </Grid>
           <Grid item>
-            <Typography variant="subtitle2" paragraph>
+            <Typography variant="body1" paragraph>
               We’re the new kid on the block.
             </Typography>
           </Grid>
           <Grid item>
             <Typography
-              variant="subtitle2"
+              variant="body1"
               color="textSecondary"
               align="justify"
               paragraph
@@ -83,7 +83,7 @@ const About = (props) => {
           </Grid>
           <Grid item>
             <Typography
-              variant="subtitle2"
+              variant="body1"
               color="textSecondary"
               align="justify"
               paragraph
@@ -96,7 +96,7 @@ const About = (props) => {
           </Grid>
           <Grid item>
             <Typography
-              variant="subtitle2"
+              variant="body1"
               color="textSecondary"
               align="justify"
               paragraph
@@ -112,7 +112,7 @@ const About = (props) => {
           </Grid>
           <Grid item>
             <Typography
-              variant="subtitle2"
+              variant="body1"
               color="textSecondary"
               align="justify"
               paragraph
@@ -129,7 +129,7 @@ const About = (props) => {
       {/******************************************** section ********************************************/}
       <Grid item container direction="column" className={classes.marginTop}>
         <Grid item>
-          <Typography variant="h6" color="primary">
+          <Typography variant="h4" color="primary">
             Team
           </Typography>
         </Grid>
@@ -154,7 +154,7 @@ const About = (props) => {
           <Grid item container md direction="column" style={{ margin: "2rem" }}>
             <Grid item>
               <Typography
-                variant="subtitle2"
+                variant="body1"
                 color="textSecondary"
                 align="justify"
                 paragraph
@@ -167,7 +167,7 @@ const About = (props) => {
             </Grid>
             <Grid item>
               <Typography
-                variant="subtitle2"
+                variant="body1"
                 color="textSecondary"
                 align="justify"
                 paragraph

@@ -46,7 +46,7 @@ const Revolution = (props) => {
       <Grid item>
         <Card className={classes.root}>
           <CardContent>
-            <Typography variant="h6" color="primary">
+            <Typography variant="h5" color="primary" paragraph>
               The Revolution
             </Typography>
             <Typography color="textSecondary" align="justify">

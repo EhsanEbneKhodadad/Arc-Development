@@ -31,20 +31,17 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   img: {
-    width: "90%",
-    height: "90%",
-    [theme.breakpoints.down("md")]: {
-      width: "70%",
-      height: "70%",
-    },
+    width: "60%",
+    height: "60%",
   },
   secondImg: {
-    width: "500px",
+    width: "40%",
+    height: "40%",
+  },
+  launchImg: {
+    width: "15%",
     [theme.breakpoints.down("sm")]: {
-      width: "400px",
-    },
-    [theme.breakpoints.down("xs")]: {
-      width: "250px",
+      width: "50%",
     },
   },
   right: {
@@ -177,7 +174,7 @@ const Revolution = (props) => {
       {/******************************************** section ********************************************/}
       <Grid item container className={classes.marginTop}>
         <Grid item>
-          <Typography variant="h6" color="primary" gutterBottom>
+          <Typography variant="h3" color="primary" gutterBottom>
             The Revolution
           </Typography>
         </Grid>
@@ -193,7 +190,7 @@ const Revolution = (props) => {
             justifyContent={matches ? null : "flex-end"}
           >
             <Grid item>
-              <Typography variant="h6" color="primary">
+              <Typography variant="h4" color="primary">
                 Vision
               </Typography>
             </Grid>
@@ -274,7 +271,7 @@ const Revolution = (props) => {
       >
         <Grid item container md={6}>
           <Grid item>
-            <Typography variant="h6" color="primary" gutterBottom>
+            <Typography variant="h4" color="primary" gutterBottom>
               Technology
             </Typography>
           </Grid>
@@ -380,7 +377,7 @@ const Revolution = (props) => {
         className={classes.marginContainer}
       >
         <Grid item>
-          <Typography variant="h6" color="primary">
+          <Typography variant="h3" color="primary">
             Process
           </Typography>
         </Grid>
@@ -440,11 +437,7 @@ const Revolution = (props) => {
           </Grid>
         </Grid>
         <Grid item md={8} className={classes.imgContainer}>
-          <img
-            src={consultation}
-            alt="consultation"
-            className={matches ? classes.img : null}
-          />
+          <img src={consultation} alt="consultation" className={classes.img} />
         </Grid>
       </Grid>
       {/******************************************** section ********************************************/}
@@ -495,11 +488,7 @@ const Revolution = (props) => {
           </Grid>
         </Grid>
         <Grid item md={8} className={classes.imgContainer}>
-          <img
-            src={mockup}
-            alt="mockup"
-            className={matches ? classes.img : null}
-          />
+          <img src={mockup} alt="mockup" className={classes.img} />
         </Grid>
       </Grid>
       {/******************************************** section ********************************************/}
@@ -551,11 +540,7 @@ const Revolution = (props) => {
           </Grid>
         </Grid>
         <Grid item md={8} className={classes.imgContainer}>
-          <img
-            src={review}
-            alt="review"
-            className={matches ? classes.img : null}
-          />
+          <img src={review} alt="review" className={classes.secondImg} />
         </Grid>
       </Grid>
       {/******************************************** section ********************************************/}
@@ -634,11 +619,7 @@ const Revolution = (props) => {
           </Grid>
         </Grid>
         <Grid item md={8} className={classes.imgContainer}>
-          <img
-            src={review}
-            alt="review"
-            className={matches ? classes.img : null}
-          />
+          <img src={review} alt="review" className={classes.secondImg} />
         </Grid>
       </Grid>
       {/******************************************** section ********************************************/}
@@ -728,7 +709,7 @@ const Revolution = (props) => {
           </Grid>
         </Grid>
         <Grid item md={8} className={classes.imgContainer}>
-          <img src={build} alt="build" className={classes.secondImg} />
+          <img src={build} alt="build" className={classes.img} />
         </Grid>
       </Grid>
       {/******************************************** section ********************************************/}
@@ -784,11 +765,7 @@ const Revolution = (props) => {
           </Grid>
         </Grid>
         <Grid item md={8} className={classes.imgContainer}>
-          <img
-            src={launch}
-            alt="launch"
-            className={matches ? classes.img : null}
-          />
+          <img src={launch} alt="launch" className={classes.launchImg} />
         </Grid>
       </Grid>
       {/******************************************** section ********************************************/}
@@ -846,7 +823,7 @@ const Revolution = (props) => {
           <img
             src={maintainIcon}
             alt="maintainIcon"
-            className={matches ? classes.img : null}
+            className={classes.secondImg}
           />
         </Grid>
       </Grid>

@@ -30,13 +30,13 @@ const WebsiteDevelopment = (props) => {
       <Grid item className={classes.margin}>
         <Grid container>
           <Grid item md={4} xs={9}>
-            <Typography variant="h6" color="primary">
+            <Typography variant="h5" color="primary" paragraph>
               Website Development
             </Typography>
-            <Typography variant="body2" color="textSecondary" gutterBottom>
+            <Typography variant="body2" color="textSecondary" paragraph>
               Reach More. Discover More. Sell more.
             </Typography>
-            <Typography variant="body2" color="textSecondary" gutterBottom>
+            <Typography variant="body2" color="textSecondary" paragraph>
               Optimized for Search Engines, built for speed.
             </Typography>
             <LearnBtn

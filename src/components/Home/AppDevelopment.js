@@ -28,13 +28,13 @@ const AppDevelopment = (props) => {
       <Grid item className={classes.right}>
         <Grid container alignItems="center">
           <Grid item md={8} xs={9}>
-            <Typography variant="h6" color="primary" gutterBottom>
+            <Typography variant="h5" color="primary" paragraph>
               iOS/Android App Development
             </Typography>
-            <Typography variant="body2" color="textSecondary" gutterBottom>
+            <Typography variant="body2" color="textSecondary" paragraph>
               Extend Functionality. Extend Access. Increase Engagement.
             </Typography>
-            <Typography variant="body2" color="textSecondary" gutterBottom>
+            <Typography variant="body2" color="textSecondary" paragraph>
               Integrate your web experience or create a standalone app with
               either mobile platform.
             </Typography>
