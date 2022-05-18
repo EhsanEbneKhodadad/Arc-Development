@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { ThemeProvider } from "@material-ui/core";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./layout/Layout";
 import theme from "./components/ui/Theme";
-import Header from "./components/ui/Header";
-import Footer from "./components/ui/Footer";
 import Home from "./container/Home";
 import Services from "./container/Services";
 import SoftwareDevelopment from "./container/SoftwareDevelopment";
@@ -22,68 +21,73 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Header
+        <Layout
           value={value}
           setValue={setValue}
           menuIndex={menuIndex}
           setMenuIndex={setMenuIndex}
-        />
-        <Routes>
-          <Route
-            path="/"
-            element={<Home setValue={setValue} setMenuIndex={setMenuIndex} />}
-          />
-          <Route
-            path="/services"
-            element={
-              <Services setValue={setValue} setMenuIndex={setMenuIndex} />
-            }
-          />
-          <Route
-            path="/custom-software"
-            element={
-              <SoftwareDevelopment
-                setValue={setValue}
-                setMenuIndex={setMenuIndex}
-              />
-            }
-          />
-          <Route
-            path="/mobile-apps"
-            element={
-              <AppDevelopment setValue={setValue} setMenuIndex={setMenuIndex} />
-            }
-          />
-          <Route
-            path="/websites"
-            element={
-              <Websites setValue={setValue} setMenuIndex={setMenuIndex} />
-            }
-          />
-          <Route
-            path="/revolution"
-            element={
-              <Revolution setValue={setValue} setMenuIndex={setMenuIndex} />
-            }
-          />
-          <Route
-            path="/about"
-            element={<About setValue={setValue} setMenuIndex={setMenuIndex} />}
-          />
-          <Route
-            path="/contact"
-            element={
-              <Contact setValue={setValue} setMenuIndex={setMenuIndex} />
-            }
-          />
-          <Route
-            path="/estimate"
-            element={
-              <Estimate setValue={setValue} setMenuIndex={setMenuIndex} />
-            }
-          />
-        </Routes>
-        <Footer setValue={setValue} setMenuIndex={setMenuIndex} />
+        >
+          <Routes>
+            <Route
+              path="/"
+              element={<Home setValue={setValue} setMenuIndex={setMenuIndex} />}
+            />
+            <Route
+              path="/services"
+              element={
+                <Services setValue={setValue} setMenuIndex={setMenuIndex} />
+              }
+            />
+            <Route
+              path="/custom-software"
+              element={
+                <SoftwareDevelopment
+                  setValue={setValue}
+                  setMenuIndex={setMenuIndex}
+                />
+              }
+            />
+            <Route
+              path="/mobile-apps"
+              element={
+                <AppDevelopment
+                  setValue={setValue}
+                  setMenuIndex={setMenuIndex}
+                />
+              }
+            />
+            <Route
+              path="/websites"
+              element={
+                <Websites setValue={setValue} setMenuIndex={setMenuIndex} />
+              }
+            />
+            <Route
+              path="/revolution"
+              element={
+                <Revolution setValue={setValue} setMenuIndex={setMenuIndex} />
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <About setValue={setValue} setMenuIndex={setMenuIndex} />
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <Contact setValue={setValue} setMenuIndex={setMenuIndex} />
+              }
+            />
+            <Route
+              path="/estimate"
+              element={
+                <Estimate setValue={setValue} setMenuIndex={setMenuIndex} />
+              }
+            />
+          </Routes>
+        </Layout>
       </BrowserRouter>
     </ThemeProvider>
   );
