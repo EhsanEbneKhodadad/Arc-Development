@@ -31,8 +31,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   img: {
-    width: "60%",
-    height: "60%",
+    width: "70%",
+    height: "70%",
   },
   secondImg: {
     width: "40%",
@@ -61,6 +61,9 @@ const useStyles = makeStyles((theme) => ({
   consultation: {
     background: "#b3b3b3",
     height: "100vh",
+    [theme.breakpoints.down("xs")]: {
+      height: "90vh",
+    },
   },
   colorWhite: {
     color: "#fff",
@@ -76,14 +79,15 @@ const useStyles = makeStyles((theme) => ({
   },
   mockup: {
     padding: "1rem 7rem",
+    height: "100vh",
+    background: "#FF7373",
     [theme.breakpoints.down("md")]: {
       padding: "2rem 5rem",
     },
     [theme.breakpoints.down("xs")]: {
       padding: "2rem",
+      height: "90vh",
     },
-    background: "#FF7373",
-    height: "100vh",
   },
   review: {
     background: "#39B54A",
@@ -94,6 +98,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xs")]: {
       padding: "2rem",
+      height: "90vh",
     },
   },
   design: {
@@ -105,6 +110,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xs")]: {
       padding: "2rem",
+      height: "90vh",
     },
   },
   build: {
@@ -116,6 +122,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xs")]: {
       padding: "2rem",
+      // height: "100vh !important",
     },
   },
   launch: {
@@ -127,6 +134,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xs")]: {
       padding: "2rem",
+      height: "90vh",
     },
   },
   maintainIcon: {
@@ -138,6 +146,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xs")]: {
       padding: "2rem",
+      height: "95vh !important",
     },
   },
   iterateIcon: {
@@ -149,6 +158,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("xs")]: {
       padding: "2rem",
+      height: "90vh",
     },
   },
 }));

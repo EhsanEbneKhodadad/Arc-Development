@@ -24,11 +24,11 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   img: {
-    width: "150px",
-    height: "150px",
+    width: "130px",
+    height: "130px",
     [theme.breakpoints.down("xs")]: {
       width: "100px",
-      height: "150px",
+      height: "130px",
     },
   },
   item: {
@@ -44,7 +44,12 @@ const Services = (props) => {
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <Grid container direction="column" justifyContent='space-around' className={classes.marginTop}>
+    <Grid
+      container
+      direction="column"
+      justifyContent="space-around"
+      className={classes.marginTop}
+    >
       <Grid item>
         <Typography variant="h3" color="primary">
           Services
@@ -54,6 +59,7 @@ const Services = (props) => {
       <Grid
         container
         justifyContent={matches ? "center" : "flex-end"}
+        alignItems="center"
         className={classes.item}
       >
         <Grid item md={4} xs={9}>
@@ -63,7 +69,7 @@ const Services = (props) => {
           <Typography
             variant="body2"
             color="textSecondary"
-            gutterBottom
+            paragraph
             align="justify"
           >
             Extend Functionality. Extend Access. Increase Engagement.
@@ -71,7 +77,7 @@ const Services = (props) => {
           <Typography
             variant="body2"
             color="textSecondary"
-            gutterBottom
+            paragraph
             align="justify"
           >
             Integrate your web experience or create a standalone app with either
@@ -94,6 +100,7 @@ const Services = (props) => {
       <Grid
         container
         justifyContent={matches ? "center" : "flex-start"}
+        alignItems="center"
         className={classes.item}
       >
         <Grid item md={4} xs={9}>
@@ -103,7 +110,7 @@ const Services = (props) => {
           <Typography
             variant="body2"
             color="textSecondary"
-            gutterBottom
+            paragraph
             align="justify"
           >
             Save Energy. Save Time. Save Money.
@@ -111,7 +118,7 @@ const Services = (props) => {
           <Typography
             variant="body2"
             color="textSecondary"
-            gutterBottom
+            paragraph
             align="justify"
           >
             Complete digital solutions, from investigation to{" "}
@@ -126,7 +133,7 @@ const Services = (props) => {
             }}
           />
         </Grid>
-        <Grid item md={2} xs={3}>
+        <Grid item md={2} xs={3} style={{ paddingLeft: matches ? 20 : 0 }}>
           <img alt="Software" src={software} className={classes.img} />
         </Grid>
       </Grid>
@@ -134,6 +141,7 @@ const Services = (props) => {
       <Grid
         container
         justifyContent={matches ? "center" : "flex-end"}
+        alignItems="center"
         className={classes.item}
       >
         <Grid item md={4} xs={9}>
@@ -143,7 +151,7 @@ const Services = (props) => {
           <Typography
             variant="body2"
             color="textSecondary"
-            gutterBottom
+            paragraph
             align="justify"
           >
             Reach More. Discover More. Sell more.
@@ -151,7 +159,7 @@ const Services = (props) => {
           <Typography
             variant="body2"
             color="textSecondary"
-            gutterBottom
+            paragraph
             align="justify"
           >
             Optimized for Search Engines, built for speed.
@@ -165,7 +173,7 @@ const Services = (props) => {
             }}
           />
         </Grid>
-        <Grid item md={2} xs={3}>
+        <Grid item md={2} xs={3} style={{ paddingLeft: 20 }}>
           <img alt="Website" src={website} className={classes.img} />
         </Grid>
       </Grid>

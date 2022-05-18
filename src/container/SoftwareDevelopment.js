@@ -202,13 +202,12 @@ const SoftwareDevelopment = (props) => {
           </Grid>
         </Grid>
         {/******************************************** third section ********************************************/}
-        <Grid item container>
+        <Grid item container alignItems="flex-start">
           <Grid
             item
             container
             md={6}
             className={classes.padding}
-            alignItems="center"
             justifyContent="center"
           >
             <Grid item container direction="column" sm={8}>
@@ -247,7 +246,7 @@ const SoftwareDevelopment = (props) => {
                 </Typography>
               </Grid>
             </Grid>
-            <Grid item sm={4}>
+            <Grid item sm={4} style={{ paddingLeft: "2rem" }}>
               <div ref={documentContainer} className={classes.animation} />
             </Grid>
           </Grid>
@@ -277,17 +276,29 @@ const SoftwareDevelopment = (props) => {
                 </Typography>
               </Grid>
             </Grid>
-            <Grid item sm={4}>
+            <Grid item sm={4} style={{ paddingLeft: "2rem" }}>
               <div ref={scaleContainer} className={classes.animation} />
             </Grid>
           </Grid>
         </Grid>
         {/******************************************** fourth section ********************************************/}
-        <Grid item container direction="column" alignItems="center">
+        <Grid
+          item
+          container
+          direction="column"
+          alignItems="center"
+          className={classes.marginTop}
+        >
           <Grid item className={classes.rootImg}>
             <img src={root} alt="root" />
           </Grid>
-          <Grid item container direction="column" alignItems="center">
+          <Grid
+            item
+            container
+            direction="column"
+            alignItems="center"
+            className={classes.marginTop}
+          >
             <Grid item sm={4} xs={8}>
               <Typography variant="h6" color="primary" paragraph>
                 Root-Cause Analysis
@@ -308,7 +319,7 @@ const SoftwareDevelopment = (props) => {
           </Grid>
         </Grid>
         {/******************************************** fifth section ********************************************/}
-        <Grid item container>
+        <Grid item container className={classes.marginTop}>
           <Grid
             item
             container

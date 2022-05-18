@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
   sMargin: {
     margin: "0 10px",
   },
-  width: {
+  itemWidth: {
     width: "70%",
     margin: "0.4rem",
   },
@@ -86,7 +86,7 @@ const DialogComponent = (props) => {
       </DialogTitle>
       <DialogContent>
         <Grid container direction="column" alignItems="center">
-          <Grid item className={classes.width}>
+          <Grid item className={classes.itemWidth}>
             <TextField
               fullWidth
               required
@@ -102,7 +102,7 @@ const DialogComponent = (props) => {
               }}
             />
           </Grid>
-          <Grid item className={classes.width}>
+          <Grid item className={classes.itemWidth}>
             <TextField
               fullWidth
               required
@@ -119,7 +119,7 @@ const DialogComponent = (props) => {
               }}
             />
           </Grid>
-          <Grid item className={classes.width}>
+          <Grid item className={classes.itemWidth}>
             <TextField
               fullWidth
               required
@@ -133,7 +133,7 @@ const DialogComponent = (props) => {
               helperText={props.emailHelper}
             />
           </Grid>
-          <Grid item className={classes.width}>
+          <Grid item className={classes.itemWidth}>
             <TextField
               fullWidth
               required
@@ -149,7 +149,7 @@ const DialogComponent = (props) => {
               helperText={props.messageHelper}
             />
           </Grid>
-          <Grid item className={classes.width}>
+          <Grid item className={classes.itemWidth}>
             <Typography
               variant="body1"
               align="center"
@@ -161,7 +161,7 @@ const DialogComponent = (props) => {
           <Grid
             item
             container
-            className={classes.width}
+            className={classes.itemWidth}
             justifyContent="center"
             alignItems="center"
           >
