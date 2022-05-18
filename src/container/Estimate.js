@@ -195,9 +195,9 @@ const Estimate = () => {
   };
 
   const sendRequest = () => {
-    let message = "";
+    let request = "";
     requestInfo.forEach((item) =>
-      item.forEach((data) => (message += data + " "))
+      item.forEach((data) => (request += data + ", "))
     );
     setLoading(true);
     emailjs
@@ -205,8 +205,11 @@ const Estimate = () => {
         "service_ii3uwtc",
         "template_ye4ih9d",
         {
-          from_name: name,
-          request: message,
+          name: name,
+          phone: phone,
+          email: email,
+          message: message,
+          request: request,
           price: totalPrice,
         },
         "ZelHyStE66mscPhvF"
